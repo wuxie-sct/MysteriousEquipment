@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MysteriousEquipment:jar">
+    <output-path>E:/customitems/plugins</output-path>
+    <root id="archive" name="[神秘装备]MysteriousEquipment.jar">
+      <element id="module-output" name="MysteriousEquipment" />
+    </root>
+  </artifact>
+</component>

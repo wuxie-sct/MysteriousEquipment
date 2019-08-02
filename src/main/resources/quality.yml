@@ -1,0 +1,119 @@
+'0':
+  id: 0
+  name: '&f白色品质'
+  color: '&f'
+  probability: 0.0
+  maxLength: 0
+  minLength: 0
+  material:
+    amount: 5
+    id: STONE
+    data: 0
+    name: '&a绿色品质提升石'
+    lore:
+    - ''
+    enchantments:
+    - DAMAGE_ALL:1
+'1':
+  id: 1
+  name: '&a绿色品质'
+  color: '&a'
+  probability: 0.6
+  maxLength: 3
+  minLength: 0
+  material:
+    amount: 5
+    id: STONE
+    data: 0
+    name: '&b蓝色品质提升石'
+    lore:
+    - ''
+    enchantments:
+    - DAMAGE_ALL:1
+'2':
+  id: 2
+  name: '&b蓝色品质'
+  color: '&b'
+  probability: 0.5
+  maxLength: 4
+  minLength: 1
+  material:
+    amount: 5
+    id: STONE
+    data: 0
+    name: '&5紫色品质提升石'
+    lore:
+    - ''
+    enchantments:
+    - DAMAGE_ALL:1
+'3':
+  id: 3
+  name: '&5紫色品质'
+  color: '&5'
+  probability: 0.3
+  maxLength: 5
+  minLength: 2
+  material:
+    amount: 5
+    id: STONE
+    data: 0
+    name: '&e金色品质提升石'
+    lore:
+    - ''
+    enchantments:
+    - DAMAGE_ALL:1
+'4':
+  id: 4
+  name: '&e金色品质'
+  color: '&e'
+  probability: 0.15
+  maxLength: 6
+  minLength: 3
+  material:
+    amount: 5
+    id: STONE
+    data: 0
+    name: '&6暗金品质提升石'
+    lore:
+    - ''
+    enchantments:
+    - DAMAGE_ALL:1
+'5':
+  id: 5
+  name: '&6暗金品质'
+  color: '&6'
+  probability: 0.075
+  maxLength: 7
+  minLength: 4
+  material:
+    amount: 5
+    id: STONE
+    data: 0
+    name: '&c红色品质提升石'
+    lore:
+    - ''
+    enchantments:
+    - DAMAGE_ALL:1
+'6':
+  id: 6
+  name: '&c红色品质'
+  color: '&c'
+  probability: 0.0375
+  maxLength: 8
+  minLength: 5
+  material:
+    amount: 5
+    id: STONE
+    data: 0
+    name: '&d粉色品质提升石'
+    lore:
+    - ''
+    enchantments:
+    - DAMAGE_ALL:1
+'7':
+  id: 7
+  color: '&d'
+  name: '&d粉色品质'
+  probability: 0.0
+  maxLength: 9
+  minLength: 6

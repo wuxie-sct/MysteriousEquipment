@@ -1,0 +1,14 @@
+name: MysteriousEquipment
+version: ${project.version}
+main: me.wuxie.mysteriousequipment.MysteriousEquipment
+depend: [ItemNBTAPI]
+softdepend:
+- MythicMobs
+authors: [wuxie]
+commands:
+  mysteriousequipment:
+    aliases:
+    - meq
+permissions:
+  mysteriousequipment.open:
+    default: true
