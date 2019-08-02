@@ -157,16 +157,30 @@ public class InventoryClickListener implements Listener {
                 ItemStack item = inv.getItem(10);
                 ItemStack item1 = inv.getItem(16);
                 ItemStack item2 = inv.getItem(31);
-                if(item!=null){if(player.getInventory().firstEmpty()>0)player.getInventory().setItem(player.getInventory().firstEmpty(),item);else player.getWorld().dropItem(player.getLocation(),item);}
-                if(item1!=null){if(player.getInventory().firstEmpty()>0)player.getInventory().setItem(player.getInventory().firstEmpty(),item1);else player.getWorld().dropItem(player.getLocation(),item1);}
-                if(item2!=null&&!item2.getType().equals(Material.END_CRYSTAL)){if(player.getInventory().firstEmpty()>0)player.getInventory().setItem(player.getInventory().firstEmpty(),item2);else player.getWorld().dropItem(player.getLocation(),item2);}
+                if(item!=null){
+                    if(player.getInventory().firstEmpty()>0)
+                        player.getInventory().addItem(item);
+                    else player.getWorld().dropItem(player.getLocation(),item);
+                }
+                if(item1!=null){
+                    if(player.getInventory().firstEmpty()>0)
+                        player.getInventory().addItem(item1);
+                    else player.getWorld().dropItem(player.getLocation(),item1);
+                }
+                if(item2!=null&&new NBTItem(item2).hasKey("REType")){
+                    if(player.getInventory().firstEmpty()>0)
+                        player.getInventory().addItem(item2);
+                    else player.getWorld().dropItem(player.getLocation(),item2);
+                }
             }
         }
         if(inv.getTitle()!=null&&inv.getTitle().equalsIgnoreCase(Message.getMsg(Message.c_guiInfo))){
             List<Integer> noCancelSlots = Arrays.asList(10,11,12,13,14,15,16,19,20,21,22,23,24,25,39,41);
             for(int a:noCancelSlots){
                 if(inv.getItem(a)!=null){
-                    player.getInventory().addItem(inv.getItem(a));
+                    if(player.getInventory().firstEmpty()>0)
+                        player.getInventory().addItem(inv.getItem(a));
+                    else player.getWorld().dropItem(player.getLocation(),inv.getItem(a));
                 }
             }
         }
