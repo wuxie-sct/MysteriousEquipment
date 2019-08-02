@@ -26,8 +26,9 @@ public class RandomNBTItem extends NBTItem {
     public String getLocMsg(){
         return getString("locMsg");
     }
-    public void setQuality(int num){ this.setInteger("qualityId",num);
-        Bukkit.getConsoleSender().sendMessage(num+"");
+    public void setQuality(int num) {
+        this.setInteger("qualityId",num);
+        //Bukkit.getConsoleSender().sendMessage(num+"");
     }
     public void setAttributeLength(int num){ setInteger("attributeLength",num); }
     public void setMinLoc(int num){setInteger("minLoc",num); }

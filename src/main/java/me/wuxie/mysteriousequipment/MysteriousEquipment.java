@@ -50,6 +50,7 @@ public final class MysteriousEquipment extends JavaPlugin {
         ItemStackManager.load();
         QualityManager.load();
         AttributeSeparator.load();
+
         Bukkit.getPluginCommand("mysteriousequipment").setExecutor(this);
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(),this);
         if(Bukkit.getPluginManager().getPlugin("MythicMobs")!=null){

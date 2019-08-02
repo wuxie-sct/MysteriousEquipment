@@ -44,6 +44,14 @@ public class InventoryClickListener implements Listener {
                         if(inv.getItem(slot)!=null){
                             if(new NBTItem(inv.getItem(slot)).hasKey("REType")){
                                 e.setCancelled(false);
+                                new BukkitRunnable() {
+                                    @Override
+                                    public void run() {
+                                        ItemStack is3 = new ItemStack(Material.END_CRYSTAL);//末影水晶
+                                        SuckingTableGui.setName(is3);
+                                        e.getClickedInventory().setItem(slot,is3);
+                                    }
+                                }.runTaskLater(MysteriousEquipment.getPlugin(),1);
                             }
                         }
                     }
@@ -215,6 +223,11 @@ public class InventoryClickListener implements Listener {
             }
         }.runTaskAsynchronously(MysteriousEquipment.getPlugin());
     }
+
+    /**
+     * 合成
+     * @param e
+     */
     @EventHandler
     public void onClickHe(InventoryClickEvent e){
         Inventory inv = e.getClickedInventory();
@@ -261,7 +274,7 @@ public class InventoryClickListener implements Listener {
                                     return;
                                 }
                                 if(sjitem.getAmount()<sjAmount){
-                                    player.sendMessage(Message.getMsg(Message.m_f_sjItemNum,sjAmount-sjitem.getAmount()));
+                                    player.sendMessage(Message.getMsg(Message.m_f_sjItemNum,sjAmount-sjitem.getAmount(),sjitem.getItemMeta().getDisplayName()));
                                     return;
                                 }
                                 Quality nextQuality = QualityManager.getQualityMap().get(qualityId+1);
@@ -305,9 +318,12 @@ public class InventoryClickListener implements Listener {
                                                             }
                                                         }
                                                         if(isCan){
-                                                            //clItem.setAmount(clItem.getAmount()-1);
-                                                            takeItem(inv,clItem,1);
-                                                            inv.setItem(ct.getKey(),clItem);
+                                                            if(clItem.getAmount()-1==0){
+                                                                inv.setItem(ct.getKey(),null);
+                                                            }else {
+                                                                clItem.setAmount(clItem.getAmount()-1);
+                                                                inv.setItem(ct.getKey(),clItem);
+                                                            }
                                                             attributelength+=1;
                                                             if(attributes.get(phrase)==null){
                                                                 List<String> att = new ArrayList<>();
@@ -441,16 +457,14 @@ public class InventoryClickListener implements Listener {
             is.setAmount(is.getAmount()-amount);
             return true;
         }else if(is.getAmount()-amount == 0){
-            ItemStack[] contains = inv.getContents();
-            int loc = 0;
-            for(ItemStack i:inv.getContents()){
-                if(i!=null&&i.isSimilar(is)&&i.getAmount()==is.getAmount()){
-                    contains[loc] = null;
+            for(int a=0;a<inv.getSize()-1;){
+                ItemStack i = inv.getItem(a);
+                if(i!=null&&i.isSimilar(is)&&i.getAmount()==amount){
+                    inv.setItem(a,null);
                     break;
                 }
-                loc+=1;
+                a+=1;
             }
-            inv.setContents(contains);
             return true;
         }
         return false;
