@@ -3,12 +3,6 @@ package me.wuxie.mysteriousequipment.randomsamplingquality;
 import lombok.Getter;
 import org.bukkit.inventory.ItemStack;
 
-/**
- * 随机品质
- * @author irving
- * @since 2017年7月23日 下午9:41:33
- * @version MARK 0.0.1
- */
 public class Quality {
     @Getter
     private String name;    //品质名称
