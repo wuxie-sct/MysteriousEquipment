@@ -39,6 +39,7 @@ public final class MysteriousEquipment extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
+        new Metrics(this);
         colors = new String[]{"§1","§2","§3","§4","§5","§6","§7","§9","§a","§b","§c","§d","§e","§f"};
         r=new Random();
         saveDefaultConfig();
