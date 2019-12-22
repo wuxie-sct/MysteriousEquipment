@@ -1,6 +1,6 @@
 package me.wuxie.mysteriousequipment.listener;
 
-import de.tr7zw.itemnbtapi.NBTItem;
+import de.tr7zw.nbtapi.NBTItem;
 import lombok.Getter;
 import me.wuxie.mysteriousequipment.Message;
 import me.wuxie.mysteriousequipment.MysteriousEquipment;

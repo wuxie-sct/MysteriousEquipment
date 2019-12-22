@@ -1,6 +1,6 @@
 package me.wuxie.mysteriousequipment.itemstack;
 
-import de.tr7zw.itemnbtapi.NBTItem;
+import de.tr7zw.nbtapi.NBTItem;
 import lombok.Getter;
 import me.wuxie.mysteriousequipment.Message;
 import me.wuxie.mysteriousequipment.MysteriousEquipment;
@@ -34,8 +34,9 @@ public class RandomItemStack {
     @Getter private String color;
     @Getter private List<String> phrases;
     @Getter private Thesaurus thesaurus;
+    @Getter private boolean unBreak = false;
 
-    public RandomItemStack(String typeid,Object id, int data, String name, List<String> lore, List<String> enchants, int insertLine, String filename, List<String> phrases,String color){
+    public RandomItemStack(String typeid,Object id, int data, String name, List<String> lore, List<String> enchants, int insertLine, String filename, List<String> phrases,String color,boolean...b){
         this.id = id;
         this.data=data;
         this.name=name;
@@ -47,6 +48,7 @@ public class RandomItemStack {
         this.typeid=typeid;
         this.color=color;
         thesaurus = ThesaurusManager.getThesaurus(filename);
+        if(b.length>0) unBreak = b[0];
     }
     public ItemStack create(int qualityId){
         ItemStack item;
@@ -90,7 +92,7 @@ public class RandomItemStack {
                 meta = armorMeta;
             }
         }
-        meta.setUnbreakable(true);
+        meta.setUnbreakable(unBreak);
         int maxloc = insertLine;
         Quality quality;
         if(qualityId==-1){

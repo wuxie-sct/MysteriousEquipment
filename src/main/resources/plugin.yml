@@ -1,8 +1,8 @@
 name: MysteriousEquipment
 version: ${project.version}
 main: me.wuxie.mysteriousequipment.MysteriousEquipment
-depend: [ItemNBTAPI]
 softdepend:
+- NBTAPI
 - MythicMobs
 authors: [wuxie]
 commands:

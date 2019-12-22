@@ -36,7 +36,11 @@ public class ItemStackManager {
                     String filename = cs.getString("thesaurus.file");
                     List<String> phrases = cs.getStringList("thesaurus.list");
                     String color = cs.getString("color");
-                    RandomItemStack randomItemStack = new RandomItemStack(typeid,id,data,name,lore,enchantment,insert,filename,phrases,color);
+                    boolean[] b = new boolean[]{};
+                    if(cs.contains("unBreak")){
+                        b = new boolean[]{cs.getBoolean("unBreak")};
+                    }
+                    RandomItemStack randomItemStack = new RandomItemStack(typeid,id,data,name,lore,enchantment,insert,filename,phrases,color,b);
                     itemStackMap.put(s,randomItemStack);
                 }
             }

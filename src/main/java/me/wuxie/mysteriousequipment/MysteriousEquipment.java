@@ -126,6 +126,7 @@ public final class MysteriousEquipment extends JavaPlugin {
             }
             if(args[0].equalsIgnoreCase("reload")&&sender.hasPermission(getName()+".reload")){
                 reloadConfig();
+                df = new DecimalFormat(getConfig().getString("decimalFormat"));
                 message.load();
                 ThesaurusManager.load();
                 ItemStackManager.load();

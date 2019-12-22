@@ -1,7 +1,6 @@
 package me.wuxie.mysteriousequipment.itemstack;
 
-import de.tr7zw.itemnbtapi.NBTItem;
-import org.bukkit.Bukkit;
+import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.inventory.ItemStack;
 
 public class RandomNBTItem extends NBTItem {

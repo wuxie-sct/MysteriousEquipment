@@ -45,7 +45,7 @@ public class MythicMobsDeathListener implements Listener {
                     for(int a=0;a<amount;){
                         a+=1;
                         ItemStack item = null;
-                        if(args[0].equalsIgnoreCase("reitem")) {
+                        if(args[0].equalsIgnoreCase("meitem")) {
                             item = ItemStackManager.getRandomIrem(args[1], -1);
                         }else if(args[0].equalsIgnoreCase("quality")) {
                             item = QualityManager.getQualityMap().get(Integer.parseInt(args[1])).getIs();

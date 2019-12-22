@@ -34,7 +34,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/1-BungeeCord/1 - 我的江湖 - 主服务器[6667]/plugins/[nbt前置]item-nbt-api-plugin-1.8.3-SNAPSHOT.jar!/" />
+          <root url="jar://I:/1.12.2wx/1.12.2wx/plugins/plugins/MythicMobs-4.5.9.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -43,7 +43,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/1-BungeeCord/1 - 我的江湖 - 主服务器[6667]/plugins/MM系列-MythicMobs-4.4.0.jar!/" />
+          <root url="jar://I:/1.12.2wx/1.12.2wx/plugins/plugins/item-nbt-api-plugin-2.1.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

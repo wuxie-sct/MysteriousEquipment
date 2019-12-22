@@ -59,7 +59,7 @@ public class Phrase {
                         double num1 = Double.valueOf(s5[0]);
                         double num2 = Double.valueOf(s5[1]);
                         double num = Double.valueOf(MysteriousEquipment.getDf().format(nextDouble(num1,num2)));
-                        s = s.replaceFirst("<"+s4+">",num+"");
+                        s = s.replaceFirst("<"+s4+">",formatNum(num));
                     }catch (Exception e){
                         e.printStackTrace();
                     }
@@ -85,7 +85,7 @@ public class Phrase {
                         minvalue+=num1;
                         double num = Double.valueOf(MysteriousEquipment.getDf().format(nextDouble(num1,num2)));
                         value+=num;
-                        s = s.replaceFirst("<"+s4+">",num+"");
+                        s = s.replaceFirst("<"+s4+">",formatNum(num));
                     }catch (Exception e){
                         e.printStackTrace();
                     }
@@ -96,7 +96,16 @@ public class Phrase {
             colorid = (int) Math.round(c);
         }
         // 属性强度判断颜色
-        return colorid>0?colors[colorid-1]+s:s;
+        return colorid>0?colors[colorid-1]+s:colors[0]+s;
+    }
+    private static String formatNum(double num){
+        String str = Double.toString(num);
+        String[] spl =str .split("\\.");
+        // 判断整数
+        if(spl[1].equalsIgnoreCase("0")){
+            return spl[0];
+        }
+        return str;
     }
 
     public static List<String> getStringList(String string) {
